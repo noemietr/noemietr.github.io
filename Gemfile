@@ -19,9 +19,9 @@ gem "minima", github: "jekyll/minima"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # If you have any plugins, put them here!
-group :jekyll_plugins do
-   gem 'jekyll-scholar'
-end
+# group :jekyll_plugins do
+#    gem 'jekyll-scholar'
+# end
 
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
