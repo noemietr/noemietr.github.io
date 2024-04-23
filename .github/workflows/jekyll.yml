@@ -41,8 +41,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -66,7 +64,7 @@ jobs:
         run: bundler -v
 
       - name: Install Dependencies
-        run: bundle install --full-index
+        run: bundle install --deployement
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
