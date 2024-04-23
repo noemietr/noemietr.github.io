@@ -35,8 +35,9 @@ jobs:
         gem install bundle
         gem install minima
         gem install jekyll-scholar
-        bundle install --deployment
+        bundle install
         bundle update minima
+        bundle install --deployment
 
     - name: Build and run local server
       run: |
