@@ -34,6 +34,7 @@ jobs:
         rm Gemfile.lock
         gem install bundle
         gem install jekyll-feed
+        gem install jekyll-seo-tag
         gem install minima
         bundle install
         bundle update minima
