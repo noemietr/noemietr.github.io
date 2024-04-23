@@ -35,6 +35,8 @@ jobs:
         gem install bundle
         bundle install --force
         bundle install --deployment
+        bundle update
+        gem install minima
 
     - name: Build and run local server
       run: |
