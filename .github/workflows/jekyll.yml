@@ -31,11 +31,11 @@ jobs:
     - name: Install dependencies
       run: |
         bundle config path vendor/bundle
-        rm Gemfile.lock
+        # rm Gemfile.lock
         gem install bundle
-        gem install jekyll-scholar
-        bundle install --force
-        bundle install --deployment
+        # gem install jekyll-scholar
+        # bundle install --force
+        # bundle install --deployment
 
     - name: Build and run local server
       run: |
