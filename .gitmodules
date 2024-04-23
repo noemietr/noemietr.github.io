@@ -1,0 +1,4 @@
+[submodule "bundler/gems/minima-101245159535"]
+    path = bundler/gems/minima-101245159535
+    url = https://github.com/jekyll/minima
+
