@@ -64,7 +64,7 @@ jobs:
         run: bundler -v
 
       - name: Install Dependencies
-        run: bundle install --deployement
+        run: bundle install --deployment
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
