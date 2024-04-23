@@ -34,12 +34,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure RubyGems
-        run: |
-          mkdir -p ~/.gem
-          echo "---\n:rubygems_api_key: ${{ secrets.jekyll_gems }}" > ~/.gem/credentials
-        env:
-          RUBYGEMS_ACCESS_TOKEN: ${{ secrets.jekyll_gems }}
+          #- name: Configure RubyGems
+          #  run: |
+          #    mkdir -p ~/.gem
+          #    echo "---\n:rubygems_api_key: ${{ secrets.jekyll_gems }}" > ~/.gem/credentials
+          #  env:
+          #    RUBYGEMS_ACCESS_TOKEN: ${{ secrets.jekyll_gems }}
 
 
       - name: Setup Ruby
