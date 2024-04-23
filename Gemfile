@@ -5,7 +5,6 @@ source 'https://rubygems.org' do
   gem "jekyll", "~> 4.3.3"
 end
 
-
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
@@ -25,10 +24,6 @@ group :jekyll_plugins do
 end
 
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
-#
-#source 'https://rubygems.org'
-#gem 'github-pages'
-#gem 'rdiscount'
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
