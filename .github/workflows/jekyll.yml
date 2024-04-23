@@ -34,7 +34,7 @@ jobs:
         rm Gemfile.lock
         gem install bundle
         gem install jekyll-scholar
-        bundle install
+        bundle install --force
         bundle install --deployment
 
     - name: Build and run local server
