@@ -1,0 +1,158 @@
+.gif-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between the GIF and the buttons */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+/*    background-color: white;*/
+    border: none;
+/*    color: #ff5252;;*/
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for the buttons */
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+/*    background-color: white;*/
+    transform: translateY(-2px); /* Slight raise effect on hover */
+}
+
+img {
+    max-width: 100%; /* Responsive image setting */
+    height: auto;
+}
+
+::-moz-selection {
+    color: var(--color-text);
+    background: var(--color-highlight);
+}
+
+.icon-hover {
+  display: inline-flex; /* Changed to inline-flex to better control layout */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative; /* Ensures the child absolute positioning is relative to this container */
+  text-align: center;
+}
+
+.icon-hover i {
+  position: absolute;
+  transform: scale(1, 0);
+  transition: transform 500ms; /* Specify what property is transitioning */
+  opacity: 0; /* Initially hide the icon */
+  transition: opacity 500ms, transform 500ms; /* Add opacity to the transition */
+}
+
+.icon-hover > span {
+  transform: scale(1, 1);
+  display: block; /* Ensures text aligns properly in all browsers */
+  transition: transform 500ms;
+}
+
+.icon-hover:hover > span {
+  transform: scale(1, 0);
+  opacity: 0; /* Hide the text on hover */
+  transition: opacity 500ms, transform 500ms; /* Smooth transition for text disappearance */
+}
+
+.icon-hover:hover i {
+  transform: scale(1, 1);
+  opacity: 1; /* Show the icon */
+}
+
+.icon-hover:hover i {
+  transform: scale(1, 1);
+  opacity: 1; /* Ensure the icon fades in */
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;  /* Controls spacing between images */
+}
+
+.image-gallery img {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+    max-width: 100%; /* Ensures image is responsive and doesn't overflow its container */
+    height: auto; /* Keeps image aspect ratio intact */
+}
+
+@media (max-width: 600px) {
+    .image-gallery {
+        flex-direction: column;
+        align-items: center; /* Center align images vertically */
+    }
+
+    .image-gallery img {
+        max-width: 80%; /* Optionally reduce image width in smaller screens */
+    }
+}
+
+::selection {
+    color: var(--color-text);
+    background: var(--color-highlight);
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--color-background);
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+body {
+  &.prevent-scroll-mobile {
+    overflow: hidden;
+
+    @include grid-media(tablet) {
+      overflow: auto;
+    }
+  }
+}
+
+.global-wrapper {
+  margin-top: 100px;
+}
+
+.main-content {
+  min-height: calc(100vh - 268px);
+  padding-top: 1rem;
+
+  @include grid-media(tablet) {
+    min-height: calc(100vh - 248px);
+    padding-top: 2rem;
+  }
+  @include grid-media(desktop) {
+    min-height: calc(100vh - 254px);
+  }
+}
+
+.page-header-spacer {
+  height: 2em;
+}

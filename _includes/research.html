@@ -1,16 +1,77 @@
+<script>
+  function toggleGIF(action) {
+      var image = document.getElementById('gifImage');
+      if (action === 'pause') {
+          image.src = '{{ base.url }}/assets/images/research/brain_20.webp';
+      } else if (action === 'play') {
+          image.src = '{{ base.url }}/assets/images/research/brain_20.gif?' + new Date().getTime();
+      }
+  }
+</script>
+
 <h1 class="post-title">Synthesizing the language, computational, and neural sciences</h1>
 <h5 class="header">We use conceptual, formal, and computational modelling, human behavior, and brain imaging (magneto- and electroencephalography) to study language processing in the mind and brain.</h5>
 
-<figure class="research">
-  <img src="{{ base.url }}/assets/images/brain_20.gif" style="width: 75%; height: auto" alt="Distributed brain dynamics subserving language processing.">
-  <!-- <figcaption>Figure from <a href="https://www.mitpressjournals.org/doi/full/10.1162/jocn_a_01552" target="_blank">Martin (2020)</a></figcaption> -->
-</figure> 
+<div class="image-gallery">
+  <img src="{{ base.url }}/assets/images/research/blue_whale.webp" alt="Blue whale">
+  <img src="{{ base.url }}/assets/images/research/striped_tshirt.webp" alt="Striped t-shit">
+  <img src="{{ base.url }}/assets/images/research/confusion.webp" alt="Minor confusion">
+  <img src="{{ base.url }}/assets/images/research/striped_whale.webp" alt="Striped whale">
+</div>
+<figcaption>
+  <b>Figure 1</b>
+  Human language showcases our remarkable ability to understand and create expressions never encountered before, such as a 'blue and white striped whale'. We flexibly navigate linguistic rules and statistical patterns, enabling us to generate meaningful language beyond familiar contexts.
+</figcaption>
 
-<p>As humans, we can produce and understand words and sentences that we have never heard before, as long as we (and the words and sentences) play by the rules. For example, although we have specific expectations about what a given word should sound like, we do not require an exact physical copy, as a machine might, in order to recognize it. Nor do we fail to recognize a word if a person previously unknown to us produces it, or uses it in combination with a word we haven’t heard before. Although we might learn a word in a given phrase or sentence context, or might tend to experience that word more often in one context than in another, we are by no means limited to recognizing or using that word only in that context, nor only in related contexts, nor only in the contexts that we have ever experienced it in.</p>
+<br>
+<p>
+  Human language is a unique, formally-describable biological communication system in the natural world. Language behavior is not only key in everyday life, but is a hallmark of being human. Human language itself is highly adaptable and dynamic, yet requires stable and robust knowledge of linguistic structures and patterns.
+</p>
+<br>
+<p>
+  For our brains, this presents a rich computational problem–robustly representing linguistic knowledge (e.g., the speech or sign patterns, “words”, and grammar of your language) while using dynamic distributional information (e.g., when, how often, in what contexts linguistic units and structures occur) to flexibly perceive and produce language (<b>Figure 1</b>). How is linguistic knowledge, the structure and statistics of language, encoded in the brain? And specifically, how does population rhythmic activity, or neural dynamics, serve to encode this information (<b>Figure 2</b>)?
+</p>
+<br>
+<div class="gif-container">
+  <img id="gifImage" src="{{ base.url }}/assets/images/research/brain_20.gif" alt="Distributed brain dynamics subserving language processing.">
+  <div class="button-container">
+      <button onclick="toggleGIF('pause')">Pause</button>
+      <button onclick="toggleGIF('play')">Play</button>
+  </div>
+</div>
+<figcaption>
+  <b>Figure 2</b>
+  This animation illustrates hypothetical brain activity over time as we process language. Sensory input initiates a cascade of activation (illustrated by the colored bar) through linguistic levels—from syllables to words. The moving window represents how information is dynamically integrated. The resulting rhythmic brain signals, or neural dynamics, demonstrate how diverse neural networks interact, encapsulating linguistic structure and responding adaptively.
+</figcaption>
+<br>
+<p>
+  The Lise Meitner Research group <i>Language and Computation in Neural Systems</i> investigates the mechanisms and computational principles that underlie the representation and processing of human language in the mind and brain. Our aim is to develop a theory about how the brain generates human language that is based on principles from across the language sciences, the cognitive and computational sciences, and neuroscience—and to do so in a way that stays faithful to the known constraints on neural computation, to the formal properties of language, and to human behavior.
+</p>
+<br>
+<p>
+  We create theoretical models and computational implementations. Then, neuroscientific experiments are designed to validate our models. One of our key foci is on the role of “rhythmic computation” as a mechanism for symbolic representations in brain-like systems. To read more about our research,check out our <a href="/posts">projects</a> and <a href="/publications">publication</a> pages
+</p>
 
-<p>As such, a marvellous expressive capacity is extended to us—the ability to generate and express formal structures that lead to contextually-specific compositional meanings.  This fact is particularly startling if you consider that human language is processed and generated by a biological organ whose general remit is to be driven by statistical regularities in its environment.  The human brain manifests a paradox when it comes to language: Despite the clear importance of statistical knowledge and distributional information during language use and language acquisition, our everyday language behaviors exemplify an ability to break free from the very (statistical) vice that bootstrapped us up into the realm of natural language users in the first place. While this capacity may seem pedestrian to us, it sets language apart from other perception-action systems and makes language behavior vexingly difficult to account for from a neuroscientist's and computationalist's point of view.</p>
+<!-- Human language showcases our remarkable ability to understand and create expressions never encountered before, such as a 'blue and white striped whale'. Our brains flexibly navigate linguistic rules and statistical patterns, enabling us to generate meaningful language beyond familiar contexts. This unique capacity illustrates the complex interplay between the structured grammar and the dynamic, statistical nature of language processing in our neural systems.
+Our ability to generate novel expressions, such as combining 'blue and white striped' with 'whale', transcends simple associations, showcasing the intricate role of syntax in language comprehension."
 
-  
-<p>One of the system properties that underlies this capacity in language is compositionality, whereby units or structures compose (and decompose) into meanings that are determined by the constituent parts and the rules used to combine them. The formal study of language has revealed the pantheon of linguistic forms that the systematicity of mind can take, and the last century has also seen astonishing progress in neuroscience and in artificial intelligence. But all this remarkable progress has yet to offer a satisfying explanation as to how the defining features of human language arise within the constraints of a neurophysiological system. Without an explanatory neurophysiological and computational account of the quintessential properties of human language—of hierarchical structure and domain, of function application and scope, and most definitely, of compositionality—our theories of language and the human mind and brain seem startlingly incomplete.</p>
+Exploring the Brain's Linguistic Dance: 
+This animation illustrates brain activity over time as we process language. Sensory input initiates a cascade of activation (illustrated by the colored bar) through linguistic levels—from syllables to words. The moving window represents how information is dynamically integrated. The resulting rhythmic brain signals, or neural dynamics, demonstrate how diverse neural networks interact, encapsulating linguistic structure and responding adaptively, as seen when the word 'whale' triggers a surprising peak in activation.
+
+Here is animation to try to illustrate the basic idea – here on the x-axis we have time. On the y-axis is a representation of the input. 
+As sensory information from speech or sign enters the system, it passes activation to related/stored representations across the linguistic hierarchy, for example, syllables, phonemes, morphemes, words etc – that cascade of activation is represented by the colored bar. Sensory representations start this process (in yellow), but it is highly incremental, probably not linear, and benefits from prediction.
+
+Information is combined or integrated incrementally, here represented by the moving window. Because the integration process operates over time and information from the input is spread in time (the y-axis), the result is that higher-level and lower-level information interact, reproducing the well-known influence of top-down information on the input. 
+
+The relative timing of neural activity across increasingly distributed networks then creates the delta modulations we routinely observe during spoken language comprehension. The timing of the activity of these diverse populations serves to package information and propagate activation through distributed networks – this is what leads to rhythmic signals or neural dynamics in the brain, and in this way neural dynamics can contain linguistic structure by relating information stored across different populations.
+
+the progression of brain activity in response to the unexpected phrase 'blue and white striped whale'. As each word is processed, brain activation intensifies, peaking unexpectedly at 'whale'. This reset in activity highlights our brain's remarkable ability to adapt and restructure understanding in real-time, showcasing the dynamic interplay between expectation and linguistic innovation.
+
+ --><!-- <p>As humans, we can produce and understand words and sentences that we have never heard before, as long as we (and the words and sentences) play by the rules. For example, although we have specific expectations about what a given word should sound like, we do not require an exact physical copy, as a machine might, in order to recognize it. Nor do we fail to recognize a word if a person previously unknown to us produces it, or uses it in combination with a word we haven’t heard before. Although we might learn a word in a given phrase or sentence context, or might tend to experience that word more often in one context than in another, we are by no means limited to recognizing or using that word only in that context, nor only in related contexts, nor only in the contexts that we have ever experienced it in.</p> -->
+
+<!-- <p>As such, a marvellous expressive capacity is extended to us—the ability to generate and express formal structures that lead to contextually-specific compositional meanings.  This fact is particularly startling if you consider that human language is processed and generated by a biological organ whose general remit is to be driven by statistical regularities in its environment.  The human brain manifests a paradox when it comes to language: Despite the clear importance of statistical knowledge and distributional information during language use and language acquisition, our everyday language behaviors exemplify an ability to break free from the very (statistical) vice that bootstrapped us up into the realm of natural language users in the first place. While this capacity may seem pedestrian to us, it sets language apart from other perception-action systems and makes language behavior vexingly difficult to account for from a neuroscientist's and computationalist's point of view.</p> -->
+
+
+<!-- <p>One of the system properties that underlies this capacity in language is compositionality, whereby units or structures compose (and decompose) into meanings that are determined by the constituent parts and the rules used to combine them. The formal study of language has revealed the pantheon of linguistic forms that the systematicity of mind can take, and the last century has also seen astonishing progress in neuroscience and in artificial intelligence. But all this remarkable progress has yet to offer a satisfying explanation as to how the defining features of human language arise within the constraints of a neurophysiological system. Without an explanatory neurophysiological and computational account of the quintessential properties of human language—of hierarchical structure and domain, of function application and scope, and most definitely, of compositionality—our theories of language and the human mind and brain seem startlingly incomplete.</p> -->
 
 <!-- <img src="{{ base.url }}/assets/images/andrea_chapter.png" style="width: 50%; height: auto" alt="A compositional neural architecture for language">  -->

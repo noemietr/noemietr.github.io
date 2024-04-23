@@ -2,33 +2,36 @@
 <h5 class="header">* indicates a lab-member-led paper.</h5>
 
 {% assign pubs = site.data.pubs | sort: 'Date' | reverse %}
-{% assign preprints = site.array %}
+{% assign preprints = "" %}
 {% assign year_header = 0 %}
 
 <!-- make separate variable for preprints -->
 <!-- probably here I should divide in three categories -->
 {% for pub in pubs %}
-    {% if pub.Preprint_platform != nil %}
-      {% assign preprints = preprints | push: pub %}
-      {% continue %}
-    {% endif %}
+  {% if pub.Preprint_platform != nil %}
+    {% capture preprint_json %}{{ pub | jsonify }}{% endcapture %}
+    {% assign preprints = preprints | append: preprint_json | push: pub %}
+  {% endif %}
 {% endfor %}
 
-<!-- print first preprints -->
-{% for preprint in preprints %}
-  <div class="preprints">
-    {% if forloop.first %}
-      <h3 class="thin">Preprints</h3>
-    {% endif %}
-    <div class="pub-items">
-      <div class="pub-item">
-        <span class="pub-authors">{{ preprint.Authors | escape }}</span>
-        <span class="pub-title">{{ preprint.Title }}.</span>
-        <span class="pub-pdf">[<a href="{{ preprint.Preprint_link | escape }}" target="_blank">{{ preprint.Preprint_platform }}</a>]</span>
+
+<div class="preprints">
+  <h3 class="thin">Preprints</h3>
+  {% for pub in pubs %}
+      <!-- skip publications -->
+      {% if pub.Preprint_platform == nil %}
+        {% continue %}
+      {% endif %}
+      <div class="pub-items">
+        <div class="pub-item">
+          <span class="pub-authors">{{ pub.Authors | escape }}</span>
+          <span class="pub-title">{{ pub.Title }}.</span>
+          <span class="pub-pdf">[<a href="{{ pub.Preprint_link | escape }}" target="_blank">{{ pub.Preprint_platform }}</a>]</span>
+        </div>
       </div>
-    </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>
+
 
 {% for pub in pubs %}
   <div class="publications">

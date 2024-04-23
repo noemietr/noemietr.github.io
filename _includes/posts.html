@@ -1,0 +1,40 @@
+{% assign projects = site.posts %}
+
+<h1 class="post-title">Our projects</h1>
+<h5 class="header">A temporary filler title. Maybe with a 'get in touch link'.</h5>
+
+<!-- <div class="projects-intro-wrapper">
+  <p class="projects-intro"><a href="/contact">Get in touch</a> if you'd like to see some of my latest work.</p>
+</div>
+ -->
+
+<div class="projects">
+{% for project in projects limit:include.limit %}
+  <article class="project-listing">
+    <div class="thumbnail-wrapper">
+      <!-- <a href="{{ project.url | prepend: site.posturl }}"> -->
+      {% if project.turl != nil %}
+        <a href="{{ project.turl | escape }}" target="_blank">
+          <div class="thumbnail-description-wrapper">
+            <img src="{{ project.thumbnail | prepend: site.image_serve_path }}" alt="{{ project.title }}" width="600" height="450">
+            <p class="thumbnail-description">
+              <span>{{ project.description }}</span>
+            </p>
+          </div>
+          <!-- <h3 aria-hidden="true">{{ project.title }}</h3> -->
+        </a>
+      {% else %}
+        <a href="{{ project.url | prepend: site.posturl }}">
+          <div class="thumbnail-description-wrapper">
+            <img src="{{ project.thumbnail | prepend: site.image_serve_path }}" alt="{{ project.title }}" width="600" height="450">
+            <p class="thumbnail-description">
+              <span>{{ project.description }}</span>
+            </p>
+          </div>
+        </a>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div> 
+<!-- class="white-text" -->

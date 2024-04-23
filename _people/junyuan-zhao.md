@@ -15,7 +15,7 @@ impactstory:
 orcid:
 github:
 
-image_path: /assets/images/headshots/pic_JZ.jpg
+image_path: /assets/images/headshots/pic_JZ.webp
 bio_url: JZ
 
 bio:

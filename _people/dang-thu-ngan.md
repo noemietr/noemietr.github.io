@@ -15,7 +15,7 @@ impactstory:
 orcid:
 github:
 
-image_path: /assets/images/headshots/pic_ND.jpg
+image_path: /assets/images/headshots/pic_ND.webp
 bio_url: ND
 
 bio:

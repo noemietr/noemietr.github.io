@@ -15,7 +15,7 @@ impactstory:
 orcid:
 github:
 
-image_path: /assets/images/headshots/pic_YS.jpg
+image_path: /assets/images/headshots/pic_YS.webp
 bio_url: YS
 
 bio:

@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: calc($spacing-unit / 2);
 }
 
 p {
@@ -66,9 +66,14 @@ main {
  */
 
 h3.thin {
+  opacity: var(--color-rgb-opacity-tint-mid);
+  // font-size: var(--font-size-body-small);
+  // text-transform: uppercase;
+  letter-spacing: var(--font-letter-spacing-subtle);
+  // margin-bottom: rem(4px);
   text-transform: uppercase;
-  font-weight: 200;
-  color: $grey-color;
+  // font-weight: 200;
+  // color: $grey-color;
   margin: 3.75rem 0 1.25rem;
 }
 
@@ -79,6 +84,8 @@ h5.header {
   text-align: justify;
   color: lighten($text-color, 25%);
   margin-bottom: 3rem;
+  word-wrap: break-word; 
+  hyphens: auto;
 }
 
 
@@ -508,7 +515,7 @@ a {
 blockquote {
   color: $grey-color;
   border-left: 4px solid $grey-color-light;
-  padding-left: $spacing-unit / 2;
+  padding-left: calc($spacing-unit / 2);
   @include relative-font-size(1.125);
   letter-spacing: -1px;
   font-style: italic;
@@ -556,15 +563,15 @@ pre {
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  // padding-right: $spacing-unit;
+  // padding-left: $spacing-unit;
   @extend %clearfix;
 
   @include media-query(900px) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit * 2;
-    padding-left: $spacing-unit * 2;
+    padding-right: calc($spacing-unit * 2);
+    padding-left: calc($spacing-unit * 2);
   }
 
   @include media-query(500px) {
@@ -577,8 +584,8 @@ pre {
   @include media-query(300px) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    padding-right: calc($spacing-unit / 2);
+    padding-left: calc($spacing-unit / 2);
   }
 }
 
@@ -603,7 +610,6 @@ pre {
     height: 16px;
     display: inline-block;
     fill: #{$grey-color};
-    padding-right: 5px;
     vertical-align: text-top;
 }
 
@@ -649,7 +655,7 @@ table {
     }
   }
   th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    padding: calc($spacing-unit / 3) calc($spacing-unit / 2);
   }
   th {
     background-color: lighten($grey-color-light, 3%);

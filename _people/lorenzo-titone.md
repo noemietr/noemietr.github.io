@@ -15,7 +15,7 @@ impactstory:
 orcid:
 github:
 
-image_path: /assets/images/headshots/pic_LT.jpeg
+image_path: /assets/images/headshots/pic_LT.webp
 bio_url: LT
 
 bio:
