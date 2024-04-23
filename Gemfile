@@ -14,6 +14,7 @@ end
 # This will help ensure the proper Jekyll version is running.
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
+gem "jekyll-seo-tag"
 gem "minima", github: "jekyll/minima"
 # gem "minima", "~> 2.5"
 
