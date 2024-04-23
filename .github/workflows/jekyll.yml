@@ -40,8 +40,8 @@ jobs:
 
     - name: Build and run local server
       run: |
-        # bundle exec jekyll build
-        bundle exec jekyll serve --livereload --detach
+        bundle exec jekyll build
+        # bundle exec jekyll serve --livereload --detach
         # Normally, we don't run `jekyll serve` on CI as it will hang indefinitely.
         # If you want to run tests, replace the line below with your test commands.
 
