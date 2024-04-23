@@ -3,6 +3,8 @@
 source 'https://rubygems.org' do
   gem "ruby"
   gem "jekyll", "~> 4.3.3"
+  gem "minima", "> 2.5"
+  gem "webrick", "~> 1.8"
 end
 
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -14,15 +16,7 @@ end
 # This will help ensure the proper Jekyll version is running.
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-# gem "jekyll-seo-tag"
-# gem "minima", github: "jekyll/minima", branch: "master"
-gem "minima", "~> 2.5"
-
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# If you have any plugins, put them here!
-# group :jekyll_plugins do
-#    gem 'jekyll-scholar'
-# end
+#gem "minima", github: "jekyll/minima"
 
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
@@ -41,7 +35,7 @@ end
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
-# gem "webrick", "~> 1.8"
+
 
 
 
