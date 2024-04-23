@@ -45,7 +45,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # Match this with your local Ruby version if different
-          bundler-cache: false # Disable automatic Bundler caching
+          bundler-cache: true # Disable automatic Bundler caching
           # bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           # cache-version: 0 # Increment this number if you need to re-download cached gems
 
