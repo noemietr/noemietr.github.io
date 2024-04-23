@@ -8,6 +8,12 @@ on:
     branches:
       - main
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,8 +40,8 @@ jobs:
 
     - name: Build and run local server
       run: |
-        bundle exec jekyll build
+        # bundle exec jekyll build
+        bundle exec jekyll serve --livereload --detach
         # Normally, we don't run `jekyll serve` on CI as it will hang indefinitely.
         # If you want to run tests, replace the line below with your test commands.
-        # bundle exec jekyll serve --livereload --detach
 
