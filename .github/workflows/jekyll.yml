@@ -33,10 +33,8 @@ jobs:
         bundle config path vendor/bundle
         rm Gemfile.lock
         gem install bundle
-        #gem install minima
         gem install jekyll-scholar
         bundle install
-        #bundle update minima
         bundle install --deployment
 
     - name: Build and run local server
