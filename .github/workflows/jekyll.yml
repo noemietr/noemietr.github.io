@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v3.3
+        uses: ruby/setup-ruby@v3.3.0
         with:
           ruby-version: '3.3' # Match this with your local Ruby version if different
           bundler-cache: false # Disable automatic Bundler caching
