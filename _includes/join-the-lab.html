@@ -1,0 +1,20 @@
+{% assign vacancies = site.data.vacancies %}
+{% assign vacancies = '' %}
+
+<h1 class="post-title">We are recruiting lab members</h1>
+{% if vacancies != '' %}
+  <h5 class="header">Please follow the links below to read more about the positions and find out how to apply.</h5>
+  <div class="vacancies">
+    {% for position in vacancies %}
+      <a href="{{ position.link }}" target="_blank">
+        <div class="position">
+          <div class="name">{{ position.name }}</div>
+          <div class="info">{{ position.fte }} at the {{ position.location }} &bull; deadline {{ position.deadline | date: "%B %d, %Y" }}, or until position is filled.</div>
+          <!-- <p>{{ position.description }}</p> -->
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <h5 class="header">We currently have no open positions. Please check back later.</h5>
+{% endif %}

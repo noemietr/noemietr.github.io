@@ -1,0 +1,10 @@
+temp
+vendor
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.ipynb_checkpoints/
+_data/people.yml
+_includes/people0.html
+*_bu

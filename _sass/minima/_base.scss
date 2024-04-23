@@ -1,0 +1,662 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+p {
+  text-align: justify; 
+  word-wrap: break-word; 
+  hyphens: auto;
+}
+
+h4 {
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+}
+
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+
+/**
+ * Headings
+ */
+
+h3.thin {
+  text-transform: uppercase;
+  font-weight: 200;
+  color: $grey-color;
+  margin: 3.75rem 0 1.25rem;
+}
+
+h5.header {
+  // line-height: 200%;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: justify;
+  color: lighten($text-color, 25%);
+  margin-bottom: 3rem;
+}
+
+
+
+/**
+ * People : use flexbox for responsive layout
+ */
+
+.members {
+  margin-top: 7rem;
+}
+
+.member {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  max-width: 1100px;
+
+  @include media-query(900px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 7.5rem;
+    margin-bottom: 10rem;
+  }
+}
+
+.member .image {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+
+  @include media-query(900px) {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+.member .image img {
+  border: 0;
+  filter: grayscale(25%);
+  -webkit-filter: grayscale(25%);
+  width: 12rem;
+
+  @include media-query(900px) {
+    width: 27vw;
+  }
+
+  @include media-query(700px) {
+    width: 31vw;
+  }
+
+  @include media-query(500px) {
+    width: 35vw;
+  }
+
+  @include media-query(500px) {
+    width: 40vw;
+  }
+}
+
+.member .info {
+  padding-right: 0;
+  padding-left: $spacing-unit;
+
+  @include media-query(900px) {
+    padding-left: 0;
+  }
+}
+
+.member .info .name {
+  text-align: left;
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.75rem;
+
+  @include media-query(900px) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
+.member .info .role {
+  text-align: left;
+  font-weight: 200;
+  color: $grey-color;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+
+  @include media-query(900px) {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.member .info .contacts {
+  text-align: left;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+
+  @include media-query(900px) {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  ul {
+    display: inline;
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    list-style: none;
+    padding-right: 0.35rem;
+    font-size: 1.5rem;
+
+    @include media-query(900px) {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+
+/* create lab photo collage using flexbox */
+.alumni-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 1.5rem 0;
+
+  @include media-query(500px) {
+    flex-flow: column nowrap;
+  }
+}
+
+.alum {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+
+  @include media-query(500px) {
+    margin: 1rem auto;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .role {
+    font-weight: 200;
+    color: $grey-color;
+  }
+}
+
+// .alum img {
+//   margin: .25rem 0;
+//   vertical-align: middle;
+//   width: 100%;
+//   filter: grayscale(35%);
+//   -webkit-filter: grayscale(35%);
+// }
+
+/**
+ * Research
+ */
+
+.research {
+  figure {
+    border: none;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  figcaption {
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+  }
+}
+
+/**
+ * Publications
+ */
+
+.pub-item {
+  margin: 1.5rem 0;
+}
+
+
+/**
+ * Footer logos
+ */
+
+.logo-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 0.5rem;
+  list-style: none;
+}
+
+.logo {
+  background: none;
+}
+
+.logo img {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+.collage-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1.5rem 0 5rem;
+  align-items: center;
+  // display: flex;
+  // flex-flow: row wrap;
+  // align-items: stretch;
+  justify-content: center;
+  // max-height: 680px;
+  // margin: 1.5rem 0;
+
+  @include media-query(700px) {
+    display: none;
+    margin: 0;
+  }
+}
+
+.collage-item {
+  flex: 15.5%;
+  max-width: 15.5%;
+  padding: 0 0.25rem;
+  // flex-grow: auto 1;
+  // margin: auto auto -15%;
+  // height: 40vh;
+  // max-width: 270px;
+
+  // @include media-query(1440px) {
+  //   // height: 40vh;
+  //   max-width: 270px;
+  // }
+  //
+  // @include media-query(900px) {
+  //   // height: 30vh;
+  //   max-width: 270px;
+  // }
+  //
+  // @include media-query(700px) {
+  //   // height: 25vh;
+  // }
+
+  img {
+    // object-fit: cover;
+    // vertical-align: bottom;
+    // max-height: 50%;
+    // min-width: 50%;
+    // margin: auto;
+    margin: .25rem 0;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(17.5%);
+    -webkit-filter: grayscale(17.5%);
+  }
+
+  a:hover img { 
+    -webkit-filter: none;
+    filter: none;
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+}
+
+/**
+ * Vacancies
+ */
+
+.vacancies {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.position {
+    margin: 2.5rem 0;
+    font-weight: 300;
+
+    .name {
+      text-align: left;
+      margin-top: 0;
+      font-weight: 600;
+      font-size: 1.75rem;
+
+      // @include media-query(900px) {
+      //   margin-top: 1.5rem;
+      //   margin-bottom: 0.5rem;
+      //   text-align: center;
+      // }
+    }
+
+    .info {
+      display: inline;
+      // color: lighten($brand-color, 5%);
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    padding: 0 0.125rem;
+  }
+
+  .column img {
+    margin: .125rem 0;
+  }
+}
+//
+// /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+// @media screen and (max-width: 600px) {
+//   .column {
+//     flex: 100%;
+//     max-width: 100%;
+//   }
+// }
+
+/* Location: map and address for research studies */
+.location-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 1.5rem 0;
+  align-items: flex-start;
+}
+
+.location-item {
+  margin: 1rem auto;
+}
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: darken($brand-color, 25%);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:visited {
+    color: darken($brand-color, 50%);
+  }
+
+  &:hover {
+    color: hsl(0, 100%, 66%);
+    text-decoration: underline;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  @include relative-font-size(1.125);
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query(900px) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit * 2;
+    padding-left: $spacing-unit * 2;
+  }
+
+  @include media-query(500px) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+
+  @include media-query(300px) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: #{$grey-color};
+    padding-right: 5px;
+    vertical-align: text-top;
+}
+
+.social-media-list {
+  li + li {
+    padding-top: 5px;
+  }
+}
+
+/**
+ * Buttons
+ */
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #eee;
+  border: none;
+  color: $text-color;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+
+  &:hover {
+    background-color: hsl(0, 100%, 66%);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($grey-color-light, 6%);
+    }
+  }
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    border: 1px solid $grey-color-light;
+  }
+}

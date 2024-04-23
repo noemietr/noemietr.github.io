@@ -1,0 +1,45 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>An independent research group at the Max Planck Institute for Psycholinguistics</li> <br>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <ul class="logo-block">
+          <li class="logo">
+            <a href="https://www.mpi.nl/" title="MPI for Psycholinguistics" target="_blank">
+              <img class="logo" src="{{ base.url }}/assets/images/MPIfPL_logo_tag.png" alt="MPI Logo" title="MPI for Psycholinguistics">
+            </a>
+          </li>
+          <li class="logo">
+            <a href="https://www.ru.nl/donders/" title="Donders Institute for Brain, Cognition, and Behaviour" target="_blank">
+              <img class="logo" src="{{ base.url }}/assets/images/DONDERS_D_RGB_small.png" alt="Donders Logo" title="Donders Institute for Brain, Cognition, and Behaviour">
+            </a>
+          </li>
+          <li class="logo">
+            <a href="https://www.ru.nl/" title="Radboud University" target="_blank">
+              <img class="logo" src="{{ base.url }}/assets/images/ru_en_1.png" alt="RU Logo" title="Radboud University">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>

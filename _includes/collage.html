@@ -1,0 +1,110 @@
+{% assign people = site.people %}
+{% assign current-member = site.array %}
+
+{% for person in people %}
+  {% if person.image_path != '/assets/images/headshots/placeholder.png' %}
+    {% assign current-member = current-member | push: person %}
+  {% endif %}
+{% endfor %}
+
+<div class="collage-container">
+  <div class="collage-item">
+    {% for person in current-member limit:5 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:4 offset:5 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:9 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:14 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:19 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:24 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:29 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:5 offset:34 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  <div class="collage-item">
+    {% for person in current-member limit:4 offset:39 %}
+      <a href="{{ site.baseurl }}people#{{ person.bio_url }}">
+      {% if person.alumni == nil %}
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% else %}
+        <img style="-webkit-filter:grayscale(92.5%); filter:grayscale(92.5%)" src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname}}" />
+      {% endif %}
+      </a>
+    {% endfor %}
+  </div> 
+</div>

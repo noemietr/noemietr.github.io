@@ -1,0 +1,91 @@
+{% assign people = site.people | sort_natural: 'surname' %}
+{% assign group-leader = site.array %}
+{% assign everyone-else = site.array %}
+{% assign alumni = site.array %}
+
+{% for person in people %}
+  {% if person.role == 'Group leader' %}
+    {% assign group-leader = group-leader | push: person %}
+  {% elsif person.alumni != nil %}
+    {% assign alumni = alumni | push: person | sort: 'alumni' %}
+  {% elsif person.alumni == nil %}
+    {% assign everyone-else = everyone-else | push: person %}
+  {% endif %}
+{% endfor %}
+
+<h1 class="post-title">Lab members</h1>
+<h5 class="header">Our interdisciplinary group consists of international scientists consisting of linguists, cognitive scientists, cognitive neuroscientists, computational neuroscientists, computational modellers, computational scientists, and engineers.</h5>
+
+<div class="members">
+  {% for person in group-leader %}
+  <div class="member">
+      <div class="image">
+        {% if person.image_path != '' %}
+          <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname }}" />
+        {% else %}
+          <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname }}" style="visibility: hidden;"/>
+        {% endif %}
+      </div>
+      <div class="info">
+        <div class="name">{{ person.firstname }} {{ person.surname }}</div>
+        <div class="role">Research Group Leader</div>
+        <div class="contacts">{% include buttons.html %}</div>
+        <p>{{ person.bio }}</p>
+      </div>
+  </div>
+  {% endfor %}
+
+  {% for person in everyone-else %}
+  <div class="member">
+    <a id="{{ site.baseurl }}{{ person.bio_url }}">
+      <div class="image">
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname }}" />
+      </div>
+    </a>
+    <div class="info">
+      <div class="name">{{ person.firstname }} {{ person.surname }}</div>
+      <div class="role">{{ person.role }}</div>
+      <div class="contacts">{% include buttons.html %}</div>
+      <p>{{ person.bio }}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+  <h1 class="post-title">Alumni</h1>
+  {% for person in alumni %}
+  <div class="member">
+    <a id="{{ site.baseurl }}{{ person.bio_url }}">
+      <div class="image">
+        <img src="{{ site.baseurl }}{{ person.image_path }}" title="{{ person.firstname }} {{ person.surname }}" alt="{{ person.firstname }} {{ person.surname }}" />
+      </div>
+    </a>
+    <div class="info">
+      <div class="name">{{ person.firstname }} {{ person.surname }}</div>
+      {% if person.role == 'PhD student' %}
+        <div class="role">PhD, {{ person.alumni | date: '%Y' }}</div>
+      {% elsif person.role == 'MSc student' %}
+        <div class="role">{{ person.role }}, {{ person.alumni | date: '%Y' }}</div>
+      {% else %}
+        <div class="role">{{ person.role }}</div>
+      {% endif %}
+      <div class="contacts">{% include buttons.html %}</div>
+      <p>{{ person.current-position }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  <!-- <div class="alumni-grid">
+    {% for person in alumni %}
+    <div class="alum">
+      {% if person.role == 'PhD student' %}
+        <div class="name">{{ person.firstname }} {{ person.surname }}</div>
+        <div class="role">PhD, {{ person.alumni | date: '%Y' }}</div>
+        <div class="">{{ person.current-position }}</div>
+      {% else %}
+        <div class="name">{{ person.firstname }} {{ person.surname }}</div>
+        <div class="role">{{ person.role }}, {{ person.alumni | date: '%Y' }}</div>
+        <div class="">{{ person.current-position }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div> -->
+</div>

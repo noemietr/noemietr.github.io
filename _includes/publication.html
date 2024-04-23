@@ -1,0 +1,62 @@
+<h1 class="post-title">Publications</h1>
+<h5 class="header">* indicates a lab-member-led paper.</h5>
+
+{% assign pubs = site.data.pubs | sort: 'Date' | reverse %}
+{% assign preprints = site.array %}
+{% assign year_header = 0 %}
+
+<!-- make separate variable for preprints -->
+<!-- probably here I should divide in three categories -->
+{% for pub in pubs %}
+    {% if pub.Preprint_platform != nil %}
+      {% assign preprints = preprints | push: pub %}
+      {% continue %}
+    {% endif %}
+{% endfor %}
+
+<!-- print first preprints -->
+{% for preprint in preprints %}
+  <div class="preprints">
+    {% if forloop.first %}
+      <h3 class="thin">Preprints</h3>
+    {% endif %}
+    <div class="pub-items">
+      <div class="pub-item">
+        <span class="pub-authors">{{ preprint.Authors | escape }}</span>
+        <span class="pub-title">{{ preprint.Title }}.</span>
+        <span class="pub-pdf">[<a href="{{ preprint.Preprint_link | escape }}" target="_blank">{{ preprint.Preprint_platform }}</a>]</span>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% for pub in pubs %}
+  <div class="publications">
+    <!-- skip preprints -->
+    {% if pub.Preprint_platform != nil %}
+      {% continue %}
+    {% endif %}
+
+    {% assign pub_year = pub.Date | date: '%Y' %}
+    {% if year_header != pub_year %}
+      <div class="year">
+        <h3 class="thin">{{ pub.Date | date: '%Y' }}</h3>
+      </div>
+      {% assign year_header = pub_year %}
+    {% endif %}
+    <div class="pub-items">
+      <div class="pub-item">
+        <span class="pub-authors">{{ pub.Authors | escape }}</span>
+        <span class="pub-year">({{ pub.Date | date: '%Y' }}).</span>
+        <span class="pub-title">{{ pub.Title }}.</span>
+        <span class="pub-journal"><i>{{ pub.Journal }}.</i></span>
+        {% if pub.PDF %}
+          <span class="pub-pdf">[<a href="{{ pub.PDF | escape }}" target="_blank">pdf</a>]</span>
+        {% endif %}
+        {% if pub.Notes %}
+            <span class="pub-notes">{{ pub.Notes }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,35 @@
+
+
+<ul>
+  {% if person.email != nil %}
+  <li><a href="mailto:{{ person.email }}" title="Email {{ person.firstname }} {{ person.surname }}" target="_blank"><i class="fa fa-envelope"></i></a></li>
+  {% endif %}
+
+  {% if person.github != nil %}
+  <li><a href="//github.com/{{ person.github}}" title="Fork {{ person.firstname }} {{ person.surname }} on GitHub" target="_blank"><i class="fab fa-github"></i></a></li>
+  {% endif %}
+
+  {% if person.gitlab != nil %}
+  <li><a href="//gitlab.com/{{ person.gitlab}}" title="Fork {{ person.firstname }} {{ person.surname }} on GitLab" target="_blank"><i class="fab fa-gitlab"></i></a></li>
+  {% endif %}
+
+  {% if person.twitter != nil %}
+  <li><a href="//twitter.com/{{ person.twitter }}" title="Follow {{ person.firstname }} {{ person.surname }} on Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+  {% endif %}
+
+  {% if person.impactstory != nil %}
+  <li><a href="//impactstory.org/u/{{ person.impactstory }}" title="View {{ person.firstname }} {{ person.surname }}'s Impactstory" target="_blank"><i class="ai ai-impactstory"></i></a></li>
+  {% endif %}
+
+  {% if person.orcid != nil %}
+  <li><a href="//orcid.org/{{ person.orcid }}" title="View {{ person.firstname }} {{ person.surname }}'s ORCID profile" target="_blank"><i class="ai ai-orcid"></i></a></li>
+  {% endif %}
+
+  {% if person.researchgate != nil %}
+  <li><a href="//www.researchgate.net/profile/{{ person.researchgate }}" title="Follow {{ person.firstname }} {{ person.surname }} on ResearchGate" target="_blank"><i class="ai ai-researchgate"></i></a></li>
+  {% endif %}
+
+  {% if person.website != nil %}
+  <li><a href="{{ person.website }}" title="Visit {{ person.firstname }} {{ person.surname }}'s website" target="_blank"><i class="fas fa-external-link-square-alt"></i></a></li>
+  {% endif %}
+</ul>
