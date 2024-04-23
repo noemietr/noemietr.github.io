@@ -31,13 +31,6 @@ jobs:
     - name: Install dependencies
       run: |
         bundle config path vendor/bundle
-        rm Gemfile.lock
-        gem install bundle
-        gem install jekyll-feed
-        gem install jekyll-seo-tag
-        gem install minima
-        bundle install
-        bundle update minima
 
     - name: Build and run local server
       run: |
