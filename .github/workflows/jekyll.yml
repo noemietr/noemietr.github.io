@@ -65,6 +65,14 @@ jobs:
 
       - name: Install Dependencies
         run: bundle install --deployment
+        run: bundle config set --local deployment 'true'
+        run: bundle install
+        run: source 'https://rubygems.org'
+        run: gem 'minima', '~> 2.5.2'
+        run: bundle update minima
+        run: bundle install
+
+
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
