@@ -34,7 +34,6 @@ jobs:
         rm Gemfile.lock
         gem install bundle
         gem install minima
-        gem install jekyll-scholar
         bundle install
         bundle update minima
 
